@@ -4,33 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %} Home {% endblock %}</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
           integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 <!--navigation Bar-->
-<header class="container">
-    <div class="navbar">
-        <div class="toggle_btn">
-            <i class="fa-solid fa-bars"></i>
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-toggler">
+                <button class="toggler" type="button" id="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <a href="#"><img src="{{ url_for('static', filename='img/backpack4-fill.svg') }}" alt="logo"></a>
         </div>
-        <div class="logo"><a href="#">هنا الشعار</a></div>
-        <ul class="links">
-            <li><a href="hero">الرئسية</a></li>
-            <li><a href="hero">تعقب الوظيفك</a></li>
-            <li><a href="hero">صانع السيرة الذاتية</a></li>
-        </ul>
-        <a href="#" class="action-btn">تسجيل</a>
-    </div>
-    <div class="dropdown_menu">
-        <li><a href="hero">الرئسية</a></li>
-        <li><a href="hero">تعقب الوظيفك</a></li>
-        <li><a href="hero">صانع السيرة الذاتية</a></li>
-        <a href="#" class="action-btn">تسجيل</a>
+        <div class="logo">
+            <div class="nav-links">
+                <li class="links"><a href="#">الرئيسية</a></li>
+                <li class="links"><a href="#">الرئيسية</a></li>
+                <li class="links"><a href="#">الرئيسية</a></li>
+            </div>
+        </div>
+        <div class="action-button">
+            <a class="action" href="#">تسجيل</a>
+            <a class="action" href="#">دخول</a>
+        </div>
+
+
     </div>
 </header>
 
