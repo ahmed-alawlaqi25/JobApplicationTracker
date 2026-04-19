@@ -6,11 +6,11 @@
 }
 
 body {
-    background-image: url("https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
 
 }
 
@@ -20,12 +20,17 @@ li {
 
 a {
     text-decoration: none;
-    color: black;
+    color: #333;
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
-a:hover {
-    color: orange;
+p {
+    color: #333;
+}
+
+h1 {
+    color: #333
 }
 
 /*HEADER*/
@@ -34,7 +39,6 @@ header {
     background-color: #fff;
     border-bottom: 1px solid #f2f4f7;
     align-items: center;
-
     position: sticky;
     top: 0;
     left: 0%;
@@ -42,26 +46,30 @@ header {
 }
 
 .container {
-    padding: 0.7rem;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
-    max-width: 1280px;
-    height: 100%;
-    min-height: 99%;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
+    padding-left: 16px;
+    padding-right: 16px;
+
 }
+
 
 .navbar {
     display: flex;
+    padding: 0.7rem;
+    align-items: center;
+    justify-content: space-between;
     gap: 2rem;
+
 }
 
 .logo {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
 
 }
 
@@ -78,8 +86,9 @@ header {
 
 }
 
-.links:hover {
+.links a:hover {
     transform: scale(1.1);
+    color: #0d6efd;
 }
 
 .links a {
@@ -87,23 +96,15 @@ header {
     padding: 12px 16px;
 }
 
-.navbar-toggler {
-    display: flex;
-    align-items: center;
-}
 
-.navbar-toggler .toggler {
+.toggler {
     color: black;
     font-size: 1.5rem;
     cursor: pointer;
     background-color: transparent;
     border: none;
-}
 
-.navbar-toggler .toggler:hover {
-    color: orange;
 }
-
 
 .nav-overlay {
     position: fixed;
@@ -119,9 +120,8 @@ header {
 }
 
 .nav-overlay-items {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     display: flex;
-    gap: 1rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -129,100 +129,154 @@ header {
 }
 
 
-/* CSS */
+/* BUTTONS-CSS */
 .action-button {
-    align-items: center;
-    appearance: none;
-    background-color: #fff;
-    border-radius: 24px;
-    border-style: none;
-    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
-    box-sizing: border-box;
-    color: #3c4043;
-    cursor: pointer;
-    display: inline-flex;
-    fill: currentcolor;
-    font-size: 1.2rem;
-    font-weight: 500;
-    height: 48px;
-    justify-content: center;
-    letter-spacing: .25px;
-    line-height: normal;
-    max-width: 100%;
-    overflow: visible;
-    padding: 2px 24px;
-    position: relative;
+    color: #333;
     text-align: center;
-    text-transform: none;
-    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 8rem;
-    will-change: transform, opacity;
-    z-index: 0;
+    white-space: nowrap;
+    background-color: #f5b501;
+    border: 1px #7f56d9;
+    border-radius: 8rem;
+    justify-content: center;
+    align-items: center;
+    padding: .625rem 1.125rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: all .3s;
+    box-shadow: 0 1px 2px #1018280d;
+
 }
 
-.button-17:hover {
-    background: #F6F9FE;
-    color: orange;
+.login {
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+    background-color: white;
+    border: 1px #333 solid;
+    justify-content: center;
+    align-items: center;
+    padding: .625rem 1.125rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: all .3s;
+    box-shadow: 0 1px 2px #1018280d;
 }
 
-.button-17:active {
-    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
-    outline: none;
+
+.action-button:hover {
+    background-color: #0d6efd;
+    color: white;
 }
 
-.button-17:focus {
-    outline: none;
-    border: 2px solid orange;
+.overlay-button {
+    width: 80%;
+    display: block;
 }
 
-.button-17:not(:disabled) {
-    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+.overlay-button a:hover {
+    color: white;
 }
 
-.button-17:not(:disabled):hover {
-    box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+/*hero-content*/
+
+.hero-content {
+    text-align: center;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2rem;
+    display: flex;
 }
 
-.button-17:not(:disabled):focus {
-    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+.hero-h1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 10px;
+    font-size: 4rem;
+    line-height: 1.2;
 }
 
-.button-17:not(:disabled):active {
-    box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+.hero-p {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 130%;
 }
 
-.button-17:disabled {
-    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+
+.signup {
+    grid-column-gap: .5rem;
+    grid-row-gap: .5rem;
+    color: #000;
+    text-align: center;
+    letter-spacing: -.4px;
+    border-radius: 100px;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: all .2s;
+    display: inline-flex;
 }
 
-.nav-overlay-items .active-button {
-    width: 80vh;
+.signup:hover {
+    transform: scale(1.05);
 }
+
+.hero-menu {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hero-menu-items:hover {
+    transform: scale(1.05);
+}
+
+.hero-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 50%;
+    height: 50%;
+    border-radius: 70px;
+
+
+}
+
 
 @media (max-width: 960px) {
     .nav-links {
         display: none;
     }
 
-    .login {
+    .action-buttons .login {
         display: none;
     }
 
 }
 
 @media (min-width: 960px) {
-    .navbar-toggler .toggler {
+    .toggler {
         display: none;
+
     }
 
     .nav-overlay.active {
         display: none;
 
-    }
 
+    }
 }
 
 
