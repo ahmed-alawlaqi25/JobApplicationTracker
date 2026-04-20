@@ -98,7 +98,7 @@ header {
 
 
 .toggler {
-    color: black;
+    color: #333;
     font-size: 1.5rem;
     cursor: pointer;
     background-color: transparent;
@@ -211,7 +211,7 @@ header {
 }
 
 
-.signup {
+.sign-up {
     grid-column-gap: .5rem;
     grid-row-gap: .5rem;
     color: #000;
@@ -228,7 +228,7 @@ header {
     display: inline-flex;
 }
 
-.signup:hover {
+.sign-up:hover {
     transform: scale(1.05);
 }
 
