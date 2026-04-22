@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Roboto, sans-serif;
 }
 
 body {
@@ -10,6 +11,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: "Noto Sans Arabic", sans-serif;
 
 
 }
@@ -254,8 +256,6 @@ header {
     width: 800px;
     height: 400px;
     border-radius: 40px;
-
-
 }
 
 
@@ -273,13 +273,10 @@ header {
 @media (min-width: 960px) {
     .toggler {
         display: none;
-
     }
 
-    .nav-overlay.active {
+    .nav-overlay {
         display: none;
-
-
     }
 }
 
