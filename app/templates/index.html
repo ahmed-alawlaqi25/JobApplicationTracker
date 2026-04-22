@@ -11,6 +11,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
     <!-- ========================= header start ========================= -->
@@ -25,31 +26,32 @@
             </div>
             <div class="nav-links">
                 <li class="links"><a href="/">الرئيسية</a></li>
-                <li class="links"><a href="#">تعقب الوظيف</a></li>
+                <li class="links"><a href="/job-tracker">تعقب الوظيف</a></li>
                 <li class="links"><a href="#">إنشاء سيرة ذاتية</a></li>
             </div>
         <div class="action-buttons">
-            <a class="action-button" href="/sing-up">تسجيل</a>
+            <a class="action-button" href="/register">تسجيل</a>
             <a class="action-button login" href="/login">دخول</a>
         </div>
     </div>
     <div class="nav-overlay">
             <div class="nav-overlay-items ">
                 <li class="links"><a href="/">الرئيسية</a></li>
-                <li class="links"><a href="#">تعقب الوظيف</a></li>
+                <li class="links"><a href="/job-tracker">تعقب الوظيف</a></li>
                 <li class="links"><a href="#">إنشاء سيرة ذاتية</a></li>
                 <li class="action-button login overlay-button "><a href="/login">دخول</a></li>
             </div>
         </div>
     </div>
 </header>
-<!-- ========================= hero-section start ========================= -->
+
+    <!-- ========================= hero-section start ========================= -->
 <section id="home" class="hero-section">
     <div class="container hero">
         <div class="hero-content">
             <h1 class="hero-h1">ابنِ سيرتك الذاتية <br>واحصل على مقابلات عمل أكثر بـ 6 مرات</h1>
             <p class="hero-p">أنشئ سيرة ذاتية احترافية ومتوافقة مع أنظمة تتبّع المتقدمين (ATS) خلال دقائق باستخدام أداة إنشاء السير الذاتية المجانية من WEBSITE. يمكنك إنشاء عدد غير محدود من السير الذاتية المخصصة لكل وظيفة تتقدم لها.</p>
-            <a class="action-button sign-up" href="/sign-up">أنشئ حسابك الآن! — مجاني %100</a>
+            <a class="action-button sign-up" href="/register">أنشئ حسابك الآن! — مجاني %100</a>
         </div>
         <div class="hero-menu">
             <a class="hero-menu-items" href="#">تعقب الوظيفك</a>
@@ -59,9 +61,9 @@
         <div class="hero-images">
             <img class="hero-image" src="{{ url_for('static', filename='img/hero-image.png') }}" alt="hero-image">
         </div>
-
     </div>
 
+    <!-- ========================= JS Here ========================= -->
 <script
         type="text/javascript"
         src="{{ url_for('static', filename='index.js') }}"
