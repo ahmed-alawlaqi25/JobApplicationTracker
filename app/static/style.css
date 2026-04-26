@@ -30,7 +30,27 @@ p {
 }
 
 h1 {
-    color: #333
+    color: #333;
+    word-spacing: -5px;
+}
+
+h2 {
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1;
+    word-spacing: -5px;
+
+
+}
+
+h3 {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 140%;
+    word-spacing: -5px;
+
 }
 
 /*HEADER*/
@@ -182,6 +202,10 @@ header {
 }
 
 /*hero-content*/
+.hero-section {
+    margin-bottom: 2rem;
+}
+
 .container .container {
     height: 100vh;
 }
@@ -240,6 +264,10 @@ header {
     gap: 1rem;
 }
 
+.container .hero {
+    margin-bottom: 2rem;
+}
+
 .hero-menu-items:hover {
     transform: scale(1.05);
 }
@@ -248,16 +276,28 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid #f2f4f7
 }
 
 .hero-image {
     width: 800px;
-    height: 400px;
+    height: 500px;
     border-radius: 40px;
-
-
 }
 
+#features {
+    background-color: oklch(49.9238% 0.129201 253.300748 / 1);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.box {
+
+}
 
 @media (max-width: 960px) {
     .nav-links {

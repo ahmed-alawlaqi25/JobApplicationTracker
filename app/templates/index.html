@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <!-- ========================= header start ========================= -->
+<!-- ========================= header start ========================= -->
 <header>
     <div class="container">
         <div class="navbar">
@@ -28,12 +28,12 @@
                 <li class="links"><a href="#">تعقب الوظيف</a></li>
                 <li class="links"><a href="#">إنشاء سيرة ذاتية</a></li>
             </div>
-        <div class="action-buttons">
-            <a class="action-button" href="/sing-up">تسجيل</a>
-            <a class="action-button login" href="/login">دخول</a>
+            <div class="action-buttons">
+                <a class="action-button" href="/sing-up">تسجيل</a>
+                <a class="action-button login" href="/login">دخول</a>
+            </div>
         </div>
-    </div>
-    <div class="nav-overlay">
+        <div class="nav-overlay">
             <div class="nav-overlay-items ">
                 <li class="links"><a href="/">الرئيسية</a></li>
                 <li class="links"><a href="#">تعقب الوظيف</a></li>
@@ -44,11 +44,13 @@
     </div>
 </header>
 <!-- ========================= hero-section start ========================= -->
-<section id="home" class="hero-section">
+<section class="hero-section">
     <div class="container hero">
         <div class="hero-content">
             <h1 class="hero-h1">ابنِ سيرتك الذاتية <br>واحصل على مقابلات عمل أكثر بـ 6 مرات</h1>
-            <p class="hero-p">أنشئ سيرة ذاتية احترافية ومتوافقة مع أنظمة تتبّع المتقدمين (ATS) خلال دقائق باستخدام أداة إنشاء السير الذاتية المجانية من WEBSITE. يمكنك إنشاء عدد غير محدود من السير الذاتية المخصصة لكل وظيفة تتقدم لها.</p>
+            <p class="hero-p">أنشئ سيرة ذاتية احترافية ومتوافقة مع أنظمة تتبّع المتقدمين (ATS) خلال دقائق باستخدام أداة
+                إنشاء السير الذاتية المجانية من WEBSITE. يمكنك إنشاء عدد غير محدود من السير الذاتية المخصصة لكل وظيفة
+                تتقدم لها.</p>
             <a class="action-button sign-up" href="/sign-up">أنشئ حسابك الآن! — مجاني %100</a>
         </div>
         <div class="hero-menu">
@@ -59,12 +61,37 @@
         <div class="hero-images">
             <img class="hero-image" src="{{ url_for('static', filename='img/hero-image.png') }}" alt="hero-image">
         </div>
-
     </div>
+</section>
+<!-- ========================= features-section start ========================= -->
+<section id="features">
+    <div class="container features">
+        <div class="box">
+            <h3>تعقب الوظيفك</h3>
 
+        </div>
+        <div class="box">
+            <h3>تعقب الوظيفك</h3>
+
+        </div>
+        <div class="box">
+            <h3>تعقب الوظيفك</h3>
+
+        </div>
+        <div class="box">
+            <h3>تعقب الوظيفك</h3>
+
+        </div>
+    </div>
+</section>
 <script
         type="text/javascript"
         src="{{ url_for('static', filename='index.js') }}"
 ></script>
 </body>
-</html>
+<!--</html>-->
+<!--            <h3>تعقب الوظيفك</h3>-->
+<!--            <h2>منصة واحدة لتنظيم وإدارة رحلتك في البحث عن وظيفة</h2>-->
+<!--            <p>إدارة وتتبع جميع فرصك الوظيفية بسهولة من منصة واحدة. احفظ الوظائف من مختلف مواقع التوظيف عبر إضافة Teal-->
+<!--                لمتصفح Chrome لتوفر وقتك وتحافظ على تنظيمك</p>-->
+<!--            <a class="action-button sign-up" href="/sign-up">ابدأ التنظيم الآن</a>-->
