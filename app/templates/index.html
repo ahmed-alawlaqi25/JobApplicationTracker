@@ -11,6 +11,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
 <!-- ========================= header start ========================= -->
@@ -25,33 +26,31 @@
             </div>
             <div class="nav-links">
                 <li class="links"><a href="/">الرئيسية</a></li>
-                <li class="links"><a href="#">تعقب الوظيف</a></li>
+                <li class="links"><a href="/job-tracker">تعقب الوظيف</a></li>
                 <li class="links"><a href="#">إنشاء سيرة ذاتية</a></li>
             </div>
-            <div class="action-buttons">
-                <a class="action-button" href="/sing-up">تسجيل</a>
-                <a class="action-button login" href="/login">دخول</a>
-            </div>
+        <div class="action-buttons">
+            <a class="action-button" href="/register">تسجيل</a>
+            <a class="action-button login" href="/login">دخول</a>
         </div>
         <div class="nav-overlay">
             <div class="nav-overlay-items ">
                 <li class="links"><a href="/">الرئيسية</a></li>
-                <li class="links"><a href="#">تعقب الوظيف</a></li>
+                <li class="links"><a href="/job-tracker">تعقب الوظيف</a></li>
                 <li class="links"><a href="#">إنشاء سيرة ذاتية</a></li>
                 <li class="action-button login overlay-button "><a href="/login">دخول</a></li>
             </div>
         </div>
     </div>
 </header>
-<!-- ========================= hero-section start ========================= -->
-<section id="hero-section">
+
+    <!-- ========================= hero-section start ========================= -->
+<section id="home" class="hero-section">
     <div class="container hero">
         <div class="hero-content">
             <h1 class="hero-h1">ابنِ سيرتك الذاتية <br>واحصل على مقابلات عمل أكثر بـ 6 مرات</h1>
-            <p class="hero-p">أنشئ سيرة ذاتية احترافية ومتوافقة مع أنظمة تتبّع المتقدمين (ATS) خلال دقائق باستخدام أداة
-                إنشاء السير الذاتية المجانية من WEBSITE. يمكنك إنشاء عدد غير محدود من السير الذاتية المخصصة لكل وظيفة
-                تتقدم لها.</p>
-            <a class="action-button sign-up" href="/sign-up">أنشئ حسابك الآن! — مجاني %100</a>
+            <p class="hero-p">أنشئ سيرة ذاتية احترافية ومتوافقة مع أنظمة تتبّع المتقدمين (ATS) خلال دقائق باستخدام أداة إنشاء السير الذاتية المجانية من WEBSITE. يمكنك إنشاء عدد غير محدود من السير الذاتية المخصصة لكل وظيفة تتقدم لها.</p>
+            <a class="action-button sign-up" href="/register">أنشئ حسابك الآن! — مجاني %100</a>
         </div>
         <div class="hero-menu">
             <a class="hero-menu-items" href="#">تعقب الوظيفك</a>
@@ -81,56 +80,7 @@
                 <span class="feature-number">01</span>
             </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="6" height="6" rx="1.5" stroke="#1D9E75" stroke-width="1.6"/>
-                        <rect x="11" y="3" width="6" height="6" rx="1.5" stroke="#1D9E75" stroke-width="1.6"/>
-                        <rect x="3" y="11" width="6" height="6" rx="1.5" stroke="#1D9E75" stroke-width="1.6"/>
-                        <rect x="11" y="11" width="6" height="6" rx="1.5" stroke="#1D9E75" stroke-width="1.6"/>
-                    </svg>
-                </div>
-                <h3 class="feature-title">لوحة تحكم موحدة</h3>
-                <p class="feature-desc">كل فرصك الوظيفية في مكان واحد — من التقديم حتى المقابلة، مرتبة وواضحة بدون
-                    تشتت.</p>
-                <span class="feature-number">02</span>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10" cy="10" r="7" stroke="#D85A30" stroke-width="1.6"/>
-                        <path d="M10 6v4l3 2" stroke="#D85A30" stroke-width="1.6" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <h3 class="feature-title">توفير الوقت</h3>
-                <p class="feature-desc">طريقة سهلة وسريعة لتتبع كل الفرص الوظيفية — بدل ما تضيع وقتك في جداول Excel أو
-                    ملاحظات مبعثرة.</p>
-                <span class="feature-number">03</span>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 3l2 4 5 .5-3.5 3.5 1 5L10 13.5 5.5 16l1-5L3 7.5l5-.5z" stroke="#7F77DD"
-                              stroke-width="1.5" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h3 class="feature-title">تنظيم احترافي</h3>
-                <p class="feature-desc">ابقَ على اطلاع بكل تفاصيل طلباتك — ملاحظات، مواعيد، وحالة كل وظيفة في متناول
-                    يدك.</p>
-                <span class="feature-number">04</span>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="action-section">
-    <div class="right-card">
-
-    </div>
-    <div class="left-card">
-
-    </div>
-</section>
+    <!-- ========================= JS Here ========================= -->
 <script
         type="text/javascript"
         src="{{ url_for('static', filename='index.js') }}"
