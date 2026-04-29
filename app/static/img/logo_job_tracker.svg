@@ -1,0 +1,18 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <!-- Briefcase body -->
+    <rect x="4" y="11" width="32" height="24" rx="4" fill="#0d6efd"/>
+    <!-- Handle -->
+    <rect x="14" y="6" width="12" height="8" rx="3" fill="none" stroke="#0d6efd" stroke-width="3"/>
+    <!-- Plus cross -->
+    <rect x="18" y="15" width="4" height="12" rx="1.5" fill="#fff"/>
+    <rect x="13" y="19" width="14" height="4" rx="1.5" fill="#fff"/>
+    <!-- Side lines -->
+    <rect x="7" y="22" width="6" height="2" rx="1" fill="#fff" opacity="0.45"/>
+    <rect x="7" y="26" width="4" height="2" rx="1" fill="#fff" opacity="0.45"/>
+    <rect x="27" y="22" width="6" height="2" rx="1" fill="#fff" opacity="0.45"/>
+    <rect x="27" y="26" width="4" height="2" rx="1" fill="#fff" opacity="0.45"/>
+    <!-- Green check badge -->
+    <circle cx="30" cy="30" r="8" fill="#22c55e"/>
+    <polyline points="26,30 29,33.5 34,26.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round"/>
+</svg>
