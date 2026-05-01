@@ -39,7 +39,7 @@
                 <li class="links"><a href="/">الرئيسية</a></li>
                 <li class="links"><a href="#">تعقب الوظيف</a></li>
                 <li class="links"><a href="#">إنشاء سيرة ذاتية</a></li>
-                <li class="action-button login overlay-button "><a href="/login">دخول</a></li>
+                <li class="action-button login overlay-button "><a id="nav-logo" href="/login">دخول</a></li>
             </div>
         </div>
     </div>
@@ -145,15 +145,39 @@
 
 <!-- ========================= action-section start ========================= -->
 <section id="action-section">
-    <div class="container section-wrapper-action">
-        <div class="right-action-card">
-
+    <div class="container">
+        <div class="action-section-wrapper">
+            <div class="right-action-card">
+                <h2 class="call-to-action">ابدأ الآن</h2>
+                <ul>
+                    <li class="action-list">
+                        <span class="action-list-span">1. سجّل حسابًا</span>
+                        أنشئ حسابك على JobTracker مجانًا.
+                    </li>
+                    <li class="action-list">
+                        <span class="action-list-span">1. سجّل حسابًا</span>
+                        أنشئ حسابك على JobTracker مجانًا.
+                    </li>
+                    <li class="action-list">
+                        <span class="action-list-span">1. سجّل حسابًا</span>
+                        أنشئ حسابك على JobTracker مجانًا.
+                    </li>
+                </ul>
+            </div>
+            <div class="registration-card">
+                <h3 class="call-to-action-register-card">سجّل مجاناً <br> وابدأ التتبع اليوم</h3>
+                <input class="login-input" placeholder="عنوان البريد الإلكتروني">
+                <button class=register-btn>أنشئ حسابك الآن!</button>
+                <span>هل لديك حساب بالفعل؟</span>
+                <a href="/login">دخول</a>
+            </div>
         </div>
-        <div class="left-action-card">
 
-        </div>
     </div>
 </section>
+<footer>
+
+</footer>
 <script
         type="text/javascript"
         src="{{ url_for('static', filename='index.js') }}"
