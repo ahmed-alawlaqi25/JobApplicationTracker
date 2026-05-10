@@ -10,10 +10,11 @@
            L45 125
            Q45 110 60 100
            L150 40 Z"
-          stroke="#E5E7EB"
+          stroke="nono"
           stroke-width="8"
           stroke-linejoin="round"
-          fill="none"/>
+          fill="#3B82F6"
+    />
 
     <!-- JT Text -->
     <text x="110" y="190" text-anchor="middle"
@@ -35,7 +36,7 @@
     <text x="150" y="260" text-anchor="middle"
           font-family="Arial, sans-serif"
           font-size="28"
-          fill="#E5E7EB">
+          fill="#3B82F6">
         JobTracker
     </text>
 </svg>
