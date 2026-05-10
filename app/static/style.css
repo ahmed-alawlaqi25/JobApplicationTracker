@@ -187,6 +187,7 @@ header {
     transition: all .3s;
     box-shadow: 0 1px 2px #1018280d;
     display: block;
+}
 
 .action-button:hover {
     background-color: #0056b3;
@@ -424,8 +425,6 @@ header {
     letter-spacing: -0.04em;
 }
 
-<<<<<<< HEAD
-=======
 /*auth-section*/
 #auth-section {
     display: flex;
@@ -542,7 +541,7 @@ header {
 }
 
 /*action-section*/
->>>>>>> 2159e88 (connection with the backend)
+
 #action-section {
     height: 95vh;
     display: grid;
@@ -552,9 +551,8 @@ header {
 .left-card {
     background-color: #0d6efd;
     border-radius: 0 20px 20px 0;
+}
 
-<<<<<<< HEAD
-=======
 .call-to-action {
     font-size: 3.5rem;
     font-weight: 600;
@@ -619,7 +617,6 @@ header {
 
 .register-btn:hover {
     background-color: #d9a321;
->>>>>>> 2159e88 (connection with the backend)
 }
 
 @media (max-width: 960px) {
@@ -642,8 +639,6 @@ header {
     .section-wrapper {
         padding: 2rem 1.5rem;
     }
-<<<<<<< HEAD
-=======
 
     .action-section-wrapper {
         display: flex;
@@ -677,7 +672,6 @@ header {
         height: 80vh;
         border-radius: 15px;
     }
->>>>>>> 2159e88 (connection with the backend)
 }
 
 
