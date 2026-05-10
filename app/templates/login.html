@@ -1,3 +1,47 @@
+{% extends "auth_base.html" %}
 
+{% block form_content %}
 
+<h1 class="auth-title">تسجيل</h1>
 
+{% if error %}
+<p class="error-msg">{{ error }}</p>
+{% endif %}
+<form class="form-control" method="POST">
+
+    <label for="email" class="display-none">البريد الإلكتروني</label>
+    <input
+            id="email"
+            class="auth-input"
+            type="email"
+            name="email"
+            placeholder="عنوان البريد الإلكتروني"
+            required>
+
+    <label for="password" class="display-none">كلمة السر</label>
+    <input
+            id="password"
+            class="auth-input"
+            type="password"
+            name="password"
+            placeholder="كلمة السر"
+            required>
+
+    <button class="auth-btn" type="submit">
+        تسجيل الدخول
+    </button>
+
+</form>
+
+<a class="auth-reset" href="/password-reset">
+    نسيت كلمة السر؟
+</a>
+
+<div class="auth-footer">
+    <span>ليس لديك حساب بعد؟</span>
+    <a class="auth-link" href="/register">
+        سجّل هنا
+    </a>
+</div>
+
+{% endblock %}
