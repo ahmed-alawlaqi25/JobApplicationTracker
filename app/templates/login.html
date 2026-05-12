@@ -7,7 +7,7 @@
 {% if error %}
 <p class="error-msg">{{ error }}</p>
 {% endif %}
-<form class="form-control" method="POST">
+<form action="{{ url_for('auth.login') }}" class="form-control" method="POST">
 
     <label for="email" class="display-none">البريد الإلكتروني</label>
     <input

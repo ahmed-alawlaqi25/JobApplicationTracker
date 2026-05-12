@@ -154,6 +154,24 @@
         <div class="registration-card">
             <h3 class="call-to-action-register-card">سجّل مجاناً <br> وابدأ التتبع اليوم</h3>
             <form action="{{ url_for('auth.register') }}" class="form-control-main" method="POST">
+                <div class="register-card-fname-lname">
+                    <label for="fname" class="display-none">أدخل الاسم</label>
+                    <input
+                            id="fname"
+                            class="register-input"
+                            type="fname"
+                            name="fname"
+                            placeholder="أدخل الاسم"
+                            required>
+                    <label for="lname" class="display-none">أدخل اسم العائلة</label>
+                    <input
+                            id="lname"
+                            class="register-input"
+                            type="lname"
+                            name="lname"
+                            placeholder="أدخل اسم العائلة"
+                            required>
+                </div>
                 <label for="email" class="display-none">البريد الإلكتروني</label>
                 <input
                         id="email"

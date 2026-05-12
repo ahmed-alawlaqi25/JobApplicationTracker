@@ -8,11 +8,6 @@ def base():
     return render_template("home.html")
 
 
-@views.route("/home")
-def home():
-    return render_template("home.html")
-
-
 @views.route("/job-tracker")
 def job_tracker():
     return render_template("job_tracker.html")
