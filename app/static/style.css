@@ -341,6 +341,9 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
+    padding-bottom: 80px;
+    height: auto;
+
 }
 
 .feature-card {
@@ -354,6 +357,7 @@ header {
     overflow: hidden;
     transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     cursor: default;
+
 }
 
 .feature-card:hover {
@@ -541,11 +545,15 @@ header {
 }
 
 /*action-section*/
-
 #action-section {
-    height: 95vh;
+    background-color: #0d6efd;
+    min-height: 95vh;
+}
+
+.action-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-top: 10rem;
 }
 
 .left-card {
@@ -557,6 +565,7 @@ header {
     font-size: 3.5rem;
     font-weight: 600;
     margin-bottom: 40px;
+    color: white;
 
 }
 
@@ -564,6 +573,7 @@ header {
     font-size: 1.125rem;
     margin-bottom: 25px;
     line-height: 1.4;
+    color: white;
 }
 
 .action-list-span {
@@ -598,6 +608,13 @@ header {
     outline: none;
 }
 
+.form-control-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
 .register-btn {
     background-color: #ffc233;
     color: #004a7c;
@@ -629,7 +646,11 @@ header {
     }
 
     .features-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .section-heading {
@@ -640,7 +661,7 @@ header {
         padding: 2rem 1.5rem;
     }
 
-    .action-section-wrapper {
+    .action-section {
         display: flex;
         flex-direction: column;
         align-items: center;
