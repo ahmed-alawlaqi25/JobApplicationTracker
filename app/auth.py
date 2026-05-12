@@ -1,29 +1,19 @@
 from flask import Blueprint, render_template, request
-import random
 
 auth = Blueprint("auth", __name__)
 
 
 @auth.route("/login", methods=["GET", "POST"])
 def login():
-    error = None
-    if request.method == "POST":
-
-        email = request.form.get("email")
-        password = request.form.get("password")
-
-        if not email or not password:
-            error = "جميع الحقول مطلوبة"
-
     return render_template("login.html")
 
 
-@auth.route("/register")
+@auth.route("/register", methods=["GET", "POST"])
 def register():
     return render_template("register.html")
 
 
-@auth.route("/password-reset")
+@auth.route("/password-reset", methods=["GET", "POST"])
 def password_reset():
     return render_template("password_reset.html")
 

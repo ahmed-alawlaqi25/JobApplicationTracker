@@ -133,32 +133,48 @@
 
 <!-- ========================= action-section start ========================= -->
 <section id="action-section">
-    <div class="container">
-        <div class="action-section-wrapper">
-            <div class="right-action-card">
-                <h2 class="call-to-action">ابدأ الآن</h2>
-                <ul>
-                    <li class="action-list">
-                        <span class="action-list-span">1. سجّل حسابًا</span>
-                        أنشئ حسابك على JobTracker مجانًا.
-                    </li>
-                    <li class="action-list">
-                        <span class="action-list-span">1. سجّل حسابًا</span>
-                        أنشئ حسابك على JobTracker مجانًا.
-                    </li>
-                    <li class="action-list">
-                        <span class="action-list-span">1. سجّل حسابًا</span>
-                        أنشئ حسابك على JobTracker مجانًا.
-                    </li>
-                </ul>
-            </div>
-            <div class="registration-card">
-                <h3 class="call-to-action-register-card">سجّل مجاناً <br> وابدأ التتبع اليوم</h3>
-                <input class="register-input" placeholder="عنوان البريد الإلكتروني">
-                <button class=register-btn>أنشئ حسابك الآن!</button>
-                <div><span>هل لديك حساب بالفعل؟</span>
-                    <a href="/login">دخول</a></div>
-            </div>
+    <div class="container action-section">
+        <div class="right-action-card">
+            <h2 class="call-to-action">ابدأ الآن</h2>
+            <ul>
+                <li class="action-list">
+                    <span class="action-list-span">1. سجّل حسابًا</span>
+                    أنشئ حسابك على JobTracker مجانًا.
+                </li>
+                <li class="action-list">
+                    <span class="action-list-span">1. سجّل حسابًا</span>
+                    أنشئ حسابك على JobTracker مجانًا.
+                </li>
+                <li class="action-list">
+                    <span class="action-list-span">1. سجّل حسابًا</span>
+                    أنشئ حسابك على JobTracker مجانًا.
+                </li>
+            </ul>
+        </div>
+        <div class="registration-card">
+            <h3 class="call-to-action-register-card">سجّل مجاناً <br> وابدأ التتبع اليوم</h3>
+            <form action="{{ url_for('auth.register') }}" class="form-control-main" method="POST">
+                <label for="email" class="display-none">البريد الإلكتروني</label>
+                <input
+                        id="email"
+                        class="register-input"
+                        type="email"
+                        name="email"
+                        placeholder="عنوان البريد الإلكتروني"
+                        required>
+
+                <label for="password" class="display-none">كلمة السر</label>
+                <input
+                        id="password"
+                        class="register-input"
+                        type="password"
+                        name="password"
+                        placeholder="كلمة السر"
+                        required>
+                <button class="register-btn" type="submit">إنشاء حسابي</button>
+            </form>
+            <div><span>هل لديك حساب بالفعل؟</span>
+                <a href="/login">دخول</a></div>
         </div>
     </div>
 </section>

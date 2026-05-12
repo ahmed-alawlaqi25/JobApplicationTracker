@@ -4,9 +4,30 @@
 
 <h1 class="auth-title">إنشاء حساب جديد</h1>
 
-<form class="form-control" method="post">
-    <input class="auth-input" name="email" placeholder="عنوان البريد الإلكتروني">
-    <button class="auth-btn" type="submit">إنشاء حسابي</button>
+<form class="form-control" method="POST">
+
+    <label for="email" class="display-none">البريد الإلكتروني</label>
+    <input
+            id="email"
+            class="auth-input"
+            type="email"
+            name="email"
+            placeholder="عنوان البريد الإلكتروني"
+            required>
+
+    <label for="password" class="display-none">كلمة السر</label>
+    <input
+            id="password"
+            class="auth-input"
+            type="password"
+            name="password"
+            placeholder="كلمة السر"
+            required>
+
+    <button class="auth-btn" type="submit">
+        تسجيل الدخول
+    </button>
+
 </form>
 
 <p>هل لديك حساب؟ </p>
