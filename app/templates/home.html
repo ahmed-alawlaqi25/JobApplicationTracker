@@ -33,7 +33,7 @@
             </div>
             <div class="action-buttons">
                 <a class="action-button" href="/register">تسجيل</a>
-                <a class="action-button login" href="/login">دخول</a>
+                <a class="action-button login" href="/signin">دخول</a>
             </div>
         </div>
         <div class="nav-overlay">
@@ -41,7 +41,7 @@
                 <li class="links"><a href="/">الرئيسية</a></li>
                 <li class="links"><a href="#">تعقب الوظيف</a></li>
                 <li class="links"><a href="#">إنشاء سيرة ذاتية</a></li>
-                <li class="action-button login overlay-button "><a id="nav-logo" href="/login">دخول</a></li>
+                <li class="action-button login overlay-button "><a id="nav-logo" href="/signin">دخول</a></li>
             </div>
         </div>
     </div>
@@ -153,51 +153,43 @@
         </div>
         <div class="registration-card">
             <h3 class="call-to-action-register-card">سجّل مجاناً <br> وابدأ التتبع اليوم</h3>
-            <form action="{{ url_for('auth.register') }}" class="form-control-main" method="POST">
-                <div class="register-card-fname-lname">
-                    <label for="fname" class="display-none">أدخل الاسم</label>
-                    <input
-                            id="fname"
-                            class="register-input"
-                            type="fname"
-                            name="fname"
-                            placeholder="أدخل الاسم"
-                            required>
-                    <label for="lname" class="display-none">أدخل اسم العائلة</label>
-                    <input
-                            id="lname"
-                            class="register-input"
-                            type="lname"
-                            name="lname"
-                            placeholder="أدخل اسم العائلة"
-                            required>
-                </div>
-                <label for="email" class="display-none">البريد الإلكتروني</label>
-                <input
-                        id="email"
-                        class="register-input"
-                        type="email"
-                        name="email"
-                        placeholder="عنوان البريد الإلكتروني"
-                        required>
-
-                <label for="password" class="display-none">كلمة السر</label>
-                <input
-                        id="password"
-                        class="register-input"
-                        type="password"
-                        name="password"
-                        placeholder="كلمة السر"
-                        required>
-                <button class="register-btn" type="submit">إنشاء حسابي</button>
-            </form>
+            <button class="register-btn">إنشاء حسابي</button>
             <div><span>هل لديك حساب بالفعل؟</span>
-                <a href="/login">دخول</a></div>
+                <a href="/signin">دخول</a></div>
         </div>
     </div>
 </section>
-<footer>
+<footer class="footer">
+    <div class="footer-container">
 
+        <div class="footer-brand">
+            <h2>متتبع الوظائف</h2>
+
+            <p>
+                نظّم طلباتك الوظيفية بسهولة، تابع كل خطوة،
+                وخلّي رحلة البحث عن وظيفة أوضح وأقل توترًا.
+            </p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-link">
+                <a href="https://linkedin.com/in/your-linkedin" target="_blank">
+                    حسابي على لينكدإن
+                </a>
+            </div>
+            <div class="footer-link">
+                <a href="https://linkedin.com/in/your-linkedin" target="_blank">
+                    اتواصل معنا
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            © 2026 جميع الحقوق محفوظة - متتبع الوظائف
+        </p>
+    </div>
 </footer>
 <script
         type="text/javascript"

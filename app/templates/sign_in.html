@@ -7,7 +7,7 @@
 {% if error %}
 <p class="error-msg">{{ error }}</p>
 {% endif %}
-<form action="{{ url_for('auth.login') }}" class="form-control" method="POST">
+<form action="{{ url_for('auth.sign_in') }}" class="form-control" method="POST">
 
     <label for="email" class="display-none">البريد الإلكتروني</label>
     <input
@@ -17,25 +17,13 @@
             name="email"
             placeholder="عنوان البريد الإلكتروني"
             required>
-
-    <label for="password" class="display-none">كلمة السر</label>
-    <input
-            id="password"
-            class="auth-input"
-            type="password"
-            name="password"
-            placeholder="كلمة السر"
-            required>
-
+    {% if error %}
+    <p class="error-msg">{{ error_message }}</p>
+    {% endif %}
     <button class="auth-btn" type="submit">
         تسجيل الدخول
     </button>
-
 </form>
-
-<a class="auth-reset" href="/password-reset">
-    نسيت كلمة السر؟
-</a>
 
 <div class="auth-footer">
     <span>ليس لديك حساب بعد؟</span>

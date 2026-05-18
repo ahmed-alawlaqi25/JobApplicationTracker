@@ -1,5 +1,11 @@
-from flask import Blueprint, render_template, request
-import re
+from flask import Blueprint, render_template, request, redirect, url_for, session
+from supabase import create_client
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+supabase = create_client(os.getenv("SUPABASE_URL"), os.getenv("SUPABASE_API_KEY"))
 
 auth = Blueprint("auth", __name__)
 
@@ -7,51 +13,43 @@ auth = Blueprint("auth", __name__)
 @auth.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        register_data = request.form
+        email = request.form.get("email")
 
-        fname = register_data.get("fname", "")
-        fname_length = len(fname)
-        if fname_length < 2:
-            print("Error name too short")
+        password = request.form.get("password")
+        password2 = request.form.get("password2")
+        if password != password2:
+            error_password = "Passwords must match."
+            return render_template("register.html", error_password=error_password)
 
-        lname = register_data.get("lname", "")
-        lname_length = len(lname)
-        if lname_length < 2:
-            print("Error last name too short")
-
-        email = register_data.get("email", "")
-        pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
-        if not re.match(pattern, email):
-            print("Error: Invalid email format")
-        else:
-            print("Email is valid!")
-
-        password = register_data.get("password", "")
-        password_length = len(password)
-        if password_length < 7:
-            print("Error with password")
-
-        print(email, password, fname, lname)
-
+        first_name = request.form.get("first_name")
+        last_name = request.form.get("last_name")
+        print(email, password, first_name, last_name)
+        return redirect(url_for("views.job_tracker"))
     else:
         return render_template("register.html")
 
 
-@auth.route("/login", methods=["GET", "POST"])
-def login():
-    login_data = request.form
-    email = login_data.get("email")
-    password = login_data.get("password")
-    print(email, password)
+@auth.route("/signin", methods=["GET", "POST"])
+def sign_in():
+    if request.method == "POST":
+        sign_in_data = request.form
+        email = sign_in_data.get("email")
+        try:
+            supabase.auth.sign_in_with_otp({"email": email})
+        except Exception as e:
+            error_message = "Something went wrong, please try again."
+            return render_template("sign_in.html", error_message=error_message)
 
-    return render_template("login.html")
+        return redirect(url_for("auth.confirmemail"))
+    else:
+        return render_template("sign_in.html")
 
 
-@auth.route("/password-reset", methods=["GET", "POST"])
-def password_reset():
-    return render_template("password_reset.html")
+@auth.route("/confirmemail")
+def confirmemail():
+    return render_template("confirmemail.html")
 
 
-@auth.route("/logout")
-def logout():
-    return "<p>Logout</p>"
+@auth.route("/callback")
+def callback():
+    return render_template("callback.html")
