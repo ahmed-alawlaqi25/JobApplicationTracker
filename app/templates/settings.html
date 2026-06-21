@@ -1,0 +1,42 @@
+{% extends "dashboard.html" %}
+{% block form_content %}
+{{user_info}}
+<div class="container">
+    <h1 class="settings-header">الاعدادات</h1>
+    <div class="settings-section">
+        <h2>الحساب</h2>
+        <div class="info-row">
+            <span class="label">البريد الإلكتروني</span>
+            <span class="value">{{ user_data.user.email }}</span>
+        </div>
+        <div class="info-row">
+            <span class="label">تاريخ الانضمام</span>
+            <span class="value">{{ user_data.user.created_at }}</span>
+        </div>
+    </div>
+    <div class="settings-section">
+        <h2>الأمان</h2>
+        <a href="{{ url_for('auth.logout') }}">
+            <button id="signOutAllBtn" class="btn-secondary">
+                تسجيل الخروج من جميع الأجهزة
+            </button>
+        </a>
+    </div>
+    <section class="settings-section danger-zone"
+             onclick="return confirm('هل أنت متأكد من حذف حسابك؟ هذا الإجراء لا يمكن التراجع عنه.')">>
+        <h2>حذف</h2>
+        <a href="{{ url_for('views.delete_user') }}">
+            <button id="deleteAccountBtn" class="btn-danger-subtle">
+                حذف الحساب
+            </button>
+        </a>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="flash-message flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </section>
+</div>
+{% endblock %}

@@ -10,3 +10,13 @@ btn.addEventListener("click", () => {
     // toggle menu
     overlay.classList.toggle("active");
 });
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+        overlay.classList.remove("active");
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
+});
+

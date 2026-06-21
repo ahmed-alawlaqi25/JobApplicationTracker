@@ -22,26 +22,25 @@
                 <button class="toggler" type="button" id="menu-btn">
                     <i class="fa-solid fa-bars"></i>
                 </button>
-                <a class="nav-logo" href="/"><img
-                        src="{{ url_for('static', filename='img/jobtracker_logo_transparentt.svg') }}"
-                        alt="logo"></a>
+                <a href="/">
+                    <div class="home-logo">
+                        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="logo">
+                    </div>
+                </a>
             </div>
             <div class="nav-links">
-                <li class="links"><a href="/">الرئيسية</a></li>
-                <li class="links"><a href="#">تعقب الوظيف</a></li>
-                <li class="links"><a href="#">إنشاء سيرة ذاتية</a></li>
+                <li class="links"><a href="#features-job-tracker">تعقب الوظيف</a></li>
+                <li class="links"><a href="#">تقييم السيرة الذاتية</a></li>
             </div>
             <div class="action-buttons">
-                <a class="action-button" href="/register">تسجيل</a>
-                <a class="action-button login" href="/signin">دخول</a>
+                <a class="action-button header-button" href="/register">تسجيل دخول</a>
             </div>
         </div>
         <div class="nav-overlay">
             <div class="nav-overlay-items ">
-                <li class="links"><a href="/">الرئيسية</a></li>
                 <li class="links"><a href="#">تعقب الوظيف</a></li>
-                <li class="links"><a href="#">إنشاء سيرة ذاتية</a></li>
-                <li class="action-button login overlay-button "><a id="nav-logo" href="/signin">دخول</a></li>
+                <li class="links"><a href="#">تقييم السيرة الذاتية</a></li>
+                <li class="action-button login overlay-button "><a id="nav-logo" href="/register">تسجيل دخول</a></li>
             </div>
         </div>
     </div>
@@ -59,7 +58,7 @@
         </div>
         <div class="hero-menu">
             <a class="hero-menu-items" href="#">تعقب الوظيفك</a>
-            <a class="hero-menu-items" href="#">إنشاء سيرة ذاتية</a>
+            <a class="hero-menu-items" href="#">تقييم السيرة الذاتية</a>
         </div>
 
         <div class="hero-images">
@@ -70,7 +69,7 @@
 </section>
 
 <!-- ========================= features-section start ========================= -->
-<section id="features">
+<section id="features-job-tracker">
     <div class="container section-wrapper">
         <h2 class="section-heading">مميزات <span>متتبع الوظائف</span></h2>
         <p class="section-sub">أداة متكاملة لتتبع فرصك الوظيفية في مكان واحد — بسيطة، سريعة، ومنظمة.</p>
@@ -136,29 +135,50 @@
     <div class="container action-section">
         <div class="right-action-card">
             <h2 class="call-to-action">ابدأ الآن</h2>
-            <ul>
+            <ul class="action-steps">
                 <li class="action-list">
-                    <span class="action-list-span">1. سجّل حسابًا</span>
-                    أنشئ حسابك على JobTracker مجانًا.
+                    <span class="action-step-number">01</span>
+                    <div>
+                        <span class="action-list-span">سجّل حسابًا</span>
+                        <p>أنشئ حسابك على JobTracker مجانًا في ثوانٍ.</p>
+                    </div>
                 </li>
                 <li class="action-list">
-                    <span class="action-list-span">1. سجّل حسابًا</span>
-                    أنشئ حسابك على JobTracker مجانًا.
+                    <span class="action-step-number">02</span>
+                    <div>
+                        <span class="action-list-span">أضف وظائفك</span>
+                        <p>احفظ الوظائف من أي موقع توظيف بنقرة واحدة.</p>
+                    </div>
                 </li>
                 <li class="action-list">
-                    <span class="action-list-span">1. سجّل حسابًا</span>
-                    أنشئ حسابك على JobTracker مجانًا.
+                    <span class="action-step-number">03</span>
+                    <div>
+                        <span class="action-list-span">تتبع تقدمك</span>
+                        <p>راقب كل طلب من التقديم حتى المقابلة.</p>
+                    </div>
                 </li>
             </ul>
         </div>
         <div class="registration-card">
-            <h3 class="call-to-action-register-card">سجّل مجاناً <br> وابدأ التتبع اليوم</h3>
-            <button class="register-btn">إنشاء حسابي</button>
-            <div><span>هل لديك حساب بالفعل؟</span>
-                <a href="/signin">دخول</a></div>
+            <h3 class="call-to-action-register-card">سجّل مجاناً وابدأ التتبع اليوم</h3>
+            <p class="register-sub">بدون كلمة مرور — رابط دخول فوري على بريدك</p>
+            <form class="reg-form" action="{{ url_for('auth.register') }}" method="POST">
+                <label for="email" class="display-none">البريد الإلكتروني</label>
+                <input
+                        id="email"
+                        class="email-style"
+                        type="email"
+                        name="email"
+                        placeholder="بريدك الإلكتروني"
+                        required>
+                <button class="register-btn" type="submit">
+                    ابدأ مجاناً
+                </button>
+            </form>
         </div>
     </div>
 </section>
+<!-- ========================= footer start ========================= -->
 <footer class="footer">
     <div class="footer-container">
 

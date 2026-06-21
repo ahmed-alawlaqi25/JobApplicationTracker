@@ -2,9 +2,9 @@
 
 {% block form_content %}
 
-<h1 class="auth-title">إنشاء حساب جديد</h1>
-
-<form class="form-control" method="POST">
+<h1 class="auth-title">ادخل بالبريد الإلكتروني</h1>
+<p class="auth-message">سنرسل لك رابط دخول فوري — بدون كلمة مرور</p>
+<form class="form-control" action="{{ url_for('auth.register') }}" method="POST">
     <label for="email" class="display-none">البريد الإلكتروني</label>
     <input
             id="email"
@@ -17,8 +17,7 @@
         تسجيل الدخول
     </button>
 </form>
-
-<p>هل لديك حساب؟ </p>
-<a class="auth-link" href="/signin">سجّل الدخول</a>
+<p class="error-msg">{{error_message}}</p>
+<p> بالمتابعة توافق على <span class="teal">شروط الاستخدام وسياسة الخصوصية</span></p>
 
 {% endblock %}

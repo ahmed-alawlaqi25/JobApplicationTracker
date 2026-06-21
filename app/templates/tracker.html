@@ -1,11 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Welcome to our website {{ user }}</h1>
-<a href="{{ url_for('logout') }}">Logout</a>
-</body>
-</html>
+{% extends "dashboard.html" %}
+
+{% block form_content %}
+
+<main class="container">
+    <div class="tracker">
+
+        <div class="tracker-items wishlist" id="Wishlist">
+            <div class="column-header wishlist">
+                <h3>قائمة الأمنيات</h3>
+                <button type="submit" class="add-job-button">+</button>
+            </div>
+            {% for job in jobs %}
+            {% if job['status'] == 'Wishlist' %}
+            <div class="job-card" draggable="true" data-job-id="{{ job['job_id'] }}">
+                <div class="job-card-header">
+                    <h3>{{ job['job_title'] }}</h3>
+                    <small>{{ job['company_name'] }}</small>
+                </div>
+                <div class="job-card-date">
+                    <small>{{ job['created_at'] }}</small>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="tracker-items applied" id="Applied">
+            <div class="column-header">
+                <h3>تقديم</h3>
+            </div>
+            {% for job in jobs %}
+            {% if job['status'] == 'Applied' %}
+            <div class="job-card" draggable="true" data-job-id="{{ job['job_id'] }}">
+                <div class="job-card-header">
+                    <h3>{{ job['job_title'] }}</h3>
+                    <small>{{ job['company_name'] }}</small>
+                </div>
+                <div class="job-card-date">
+                    <small>{{ job['created_at'] }}</small>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="tracker-items interview" id="Interviewing">
+            <div class="column-header ">
+                <h3>مقابلة</h3>
+            </div>
+            {% for job in jobs %}
+            {% if job['status'] == 'Interviewing' %}
+            <div class="job-card" draggable="true" data-job-id="{{ job['job_id'] }}">
+                <div class="job-card-header">
+                    <h3>{{ job['job_title'] }}</h3>
+                    <small>{{ job['company_name'] }}</small>
+                </div>
+                <div class="job-card-date">
+                    <small>{{ job['created_at'] }}</small>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="tracker-items offered" id="Offered">
+            <div class="column-header">
+                <h3>عرض وظيفي</h3>
+            </div>
+            {% for job in jobs %}
+            {% if job['status'] == 'Offered' %}
+            <div class="job-card" draggable="true" data-job-id="{{ job['job_id'] }}">
+                <div class="job-card-header">
+                    <h3>{{ job['job_title'] }}</h3>
+                    <small>{{ job['company_name'] }}</small>
+                </div>
+                <div class="job-card-date">
+                    <small>{{ job['created_at'] }}</small>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="tracker-items accepted" id="Accepted">
+            <div class="column-header">
+                <h3>قبول</h3>
+            </div>
+            {% for job in jobs %}
+            {% if job['status'] == 'Accepted' %}
+            <div class="job-card" draggable="true" data-job-id="{{ job['job_id'] }}">
+                <div class="job-card-header">
+                    <h3>{{ job['job_title'] }}</h3>
+                    <small>{{ job['company_name'] }}</small>
+                </div>
+                <div class="job-card-date">
+                    <small>{{ job['created_at'] }}</small>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="delete-zone" id="delete-zone">
+            <div class="sidebar-spacer"></div>
+            <div class="delete-content">
+                <h3>حذف الوظيفة</h3>
+                <p>اسحب هنا للحذف</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<div class="board-container" style="color: white">
+    <div class="modal-box">
+        <form action="{{ url_for('views.add_job') }}" method="POST">
+
+            <label for="job_url">Job Ad URL</label>
+            <input type="text" id="job_url" name="job_url" placeholder="Job Ad URL">
+
+            <label for="job_title">Job Title</label>
+            <input type="text" id="job_title" name="job_title" placeholder="Job Title">
+
+            <label for="company_name">Company name</label>
+            <input type="text" id="company_name" name="company_name" placeholder="Company name">
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Address">
+
+            <label for="date_of_publish">Date of publish</label>
+            <input type="date" id="date_of_publish" name="date_of_publish">
+
+            <label for="job_description">Job description</label>
+            <input type="text" id="job_description" name="job_description" placeholder="Job description">
+
+            <label for="job_status">Job status</label>
+            <select id="job_status" name="job_status">
+                <option value="Wishlist">Wishlist</option>
+                <option value="Applied">Applied</option>
+                <option value="Interviewing">Interviewing</option>
+                <option value="Offered">Offered</option>
+                <option value="Accepted">Accepted</option>
+            </select>
+
+            <label for="notes">Note</label>
+            <input type="text" id="notes" name="notes" placeholder="Enter note">
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+<script
+        type="text/javascript"
+        src="{{ url_for('static', filename='drag.js') }}"
+></script>
+
+<script
+        type="text/javascript"
+        src="{{ url_for('static', filename='job_card.js') }}"
+></script>
+{% endblock %}
+
