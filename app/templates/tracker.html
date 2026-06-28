@@ -4,7 +4,6 @@
 
 <main class="container">
     <div class="tracker">
-
         <div class="tracker-items wishlist" id="Wishlist">
             <div class="column-header wishlist">
                 <h3>قائمة الأمنيات</h3>
@@ -112,44 +111,68 @@
 </main>
 
 
-<div class="board-container" style="color: white">
-    <div class="modal-box">
-        <form action="{{ url_for('views.add_job') }}" method="POST">
+<section id="tracker-form-start">
+    <div class="tracker-form">
+        <form class="job-info-form" action="{{ url_for('views.add_job') }}" method="POST">
+            <div class="job-info-form-grouper">
+                <div class="job-info-logo-h3">
+                    <div class="logo-form">
+                        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="logo">
+                    </div>
+                    <h3>وظيفة جديدة</h3>
+                </div>
+                <button type="button" class="button-form-x">x</button>
+            </div>
 
-            <label for="job_url">Job Ad URL</label>
-            <input type="text" id="job_url" name="job_url" placeholder="Job Ad URL">
+            <div class="job-info-form-url">
+                <label for="job_url">رابط الوظيفة</label>
+                <input class="form-input" type="text" id="job_url" name="job_url"
+                       placeholder="https://example.com/job/full-stack-developer">
+            </div>
+            <div class="job-info-form-title-name">
+                <label for="job_title"> المسمى الوظيفي</label>
+                <input class="form-input" type="text" id="job_title" name="job_title"
+                       placeholder="Full Stack Developer" required>
 
-            <label for="job_title">Job Title</label>
-            <input type="text" id="job_title" name="job_title" placeholder="Job Title">
+                <label for="company_name">اسم الشركة</label>
+                <input class="form-input" type="text" id="company_name" name="company_name"
+                       placeholder="مثال: شركة التقنية" required>
 
-            <label for="company_name">Company name</label>
-            <input type="text" id="company_name" name="company_name" placeholder="Company name">
+                <label for="city">المدينة</label>
+                <input class="form-input" type="text" id="city" name="city" placeholder="مثال: الرياض">
 
-            <label for="city">City</label>
-            <input type="text" id="city" name="city" placeholder="Address">
-
-            <label for="date_of_publish">Date of publish</label>
-            <input type="date" id="date_of_publish" name="date_of_publish">
-
-            <label for="job_description">Job description</label>
-            <input type="text" id="job_description" name="job_description" placeholder="Job description">
-
-            <label for="job_status">Job status</label>
-            <select id="job_status" name="job_status">
-                <option value="Wishlist">Wishlist</option>
-                <option value="Applied">Applied</option>
-                <option value="Interviewing">Interviewing</option>
-                <option value="Offered">Offered</option>
-                <option value="Accepted">Accepted</option>
-            </select>
-
-            <label for="notes">Note</label>
-            <input type="text" id="notes" name="notes" placeholder="Enter note">
-
-            <input type="submit" value="Submit">
+                <label for="date_of_publish">تاريخ النشر</label>
+                <input class="form-input" type="date" id="date_of_publish" name="date_of_publish">
+            </div>
+            <div class="job-info-form-statsu-description">
+                <div class="job-info-form-url">
+                    <label for="job_description">الوصف</label>
+                    <input class="form-input discrption" type="text" id="job_description" name="job_description"
+                           placeholder="وصف مختصر عن الوظيفة">
+                </div>
+                <div class="job-info-form-url">
+                    <label for="job_status">الحالة</label>
+                    <select class="form-input discrption" id="job_status" name="job_status" required>
+                        <option value="Wishlist"> قائمة الأمنيات</option>
+                        <option value="Applied"> تم التقديم</option>
+                        <option value="Interviewing">مقابلة</option>
+                        <option value="Offered">عرض وظيفي</option>
+                        <option value="Accepted">قبول</option>
+                    </select>
+                </div>
+            </div>
+            <div class="job-info-form-url">
+                <label for="notes">ملاحظات (اختياري)</label>
+                <textarea class="form-input discrption" type="text" id="notes" name="notes"
+                          placeholder="أي ملاحظات خاصة بهذه الوظيفة"></textarea>
+            </div>
+            <div class="button-container">
+                <input class="submit-button" type="submit" value="submit">
+                <button type="button" class="cancel-button">إلغاء</button>
+            </div>
         </form>
     </div>
-</div>
+</section>
 
 <script
         type="text/javascript"

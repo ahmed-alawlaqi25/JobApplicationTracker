@@ -22,8 +22,11 @@
             </div>
             <div class="job-info">
                 <b>الرابط</b>
-                <a class="copy-link" href="{{ job['job_url'] }}" onclick="copyLink(event, this)">
-                </a>
+                <div>
+                    <a class="copy-link" href="{{ job['job_url'] }}" onclick="copyLink(event, this)">
+                    </a>
+                    <i class="fa-solid fa-link"></i>
+                </div>
             </div>
             <div class="job-info-description">
                 <b>وصف الوظيفة</b>
@@ -36,7 +39,7 @@
             <div class="job-info">
                 <b class="b-left-card">الحالة الوظيفة</b>
                 <div>
-                    <select id="job_status" name="job_status">
+                    <select class="user-document-cv-letter" id="job_status" name="job_status">
                         <option value="Wishlist" {% if job['status'] == 'Wishlist' %}selected{% endif %}> قائمة الأمنيات
                         </option>
                         <option value="Applied"{% if job['status'] == 'Applied' %}selected{% endif %}> تقديم</option>
@@ -49,17 +52,17 @@
             <div class="job-info">
                 <div class="job-info-description">
                     <b class="b-left-card">السيرة الذاتية</b>
-                    <select id="cvs" name="cvs">
+                    <select class="user-document-cv-letter" id="cvs" name="cvs">
 
                     </select>
-                    <button>رفع السيرة</button>
+                    <button class="user-document-cv-letter">رفع السيرة</button>
                 </div>
                 <div class="job-info-description">
                     <b class="b-left-card">خطاب تعريفي</b>
-                    <select id="cover-letters" name="cover-letters">
+                    <select class="user-document-cv-letter" id="cover-letters" name="cover-letters">
 
                     </select>
-                    <button>رفع خطاب</button>
+                    <button class="user-document-cv-letter" >رفع خطاب</button>
                 </div>
             </div>
             <div class="job-info-description">

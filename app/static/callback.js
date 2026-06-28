@@ -39,6 +39,3 @@ if (accessToken) {
             window.location.href = "/register";
         });
 }
-
-
-

@@ -20,3 +20,23 @@ window.addEventListener("resize", () => {
     }
 });
 
+
+const trackerForm = document.querySelector("#tracker-form-start");
+
+document.querySelector(".button-form-x")
+    .addEventListener("click", () => {
+        trackerForm.style.display = "none";
+    });
+
+document.querySelector(".cancel-button")
+    .addEventListener("click", () => {
+        trackerForm.style.display = "none";
+    });
+
+
+const addJobBtn = document.querySelector(".add-job-button");
+
+addJobBtn.addEventListener("click", () => {
+    trackerForm.style.display = "flex";
+})
+

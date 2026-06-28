@@ -11,7 +11,7 @@
         </div>
         <div class="info-row">
             <span class="label">تاريخ الانضمام</span>
-            <span class="value">{{ user_data.user.created_at }}</span>
+            <span class="value">{{ created_at }}</span>
         </div>
     </div>
     <div class="settings-section">
@@ -23,7 +23,7 @@
         </a>
     </div>
     <section class="settings-section danger-zone"
-             onclick="return confirm('هل أنت متأكد من حذف حسابك؟ هذا الإجراء لا يمكن التراجع عنه.')">>
+             onclick="return confirm('هل أنت متأكد من حذف حسابك؟ هذا الإجراء لا يمكن التراجع عنه.')">
         <h2>حذف</h2>
         <a href="{{ url_for('views.delete_user') }}">
             <button id="deleteAccountBtn" class="btn-danger-subtle">

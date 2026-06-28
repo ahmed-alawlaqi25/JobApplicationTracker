@@ -18,6 +18,11 @@ def home():
     return render_template("home.html")
 
 
+@views.route("/contact_us")
+def contact_us():
+    return render_template("contact_us.html")
+
+
 @views.route("/tracker")
 def tracker():
     user_id = session["user_id"]
@@ -39,7 +44,7 @@ def add_job():
     job_title = request.form.get("job_title")
     company_name = request.form.get("company_name")
     city = request.form.get("city")
-    date_of_publish = request.form.get("date_of_publish")
+    date_of_publish = request.form.get("date_of_publish") or None
     job_description = request.form.get("job_description")
     job_status = request.form.get("job_status")
     notes = request.form.get("notes")
@@ -56,6 +61,7 @@ def add_job():
         "status": job_status,
         "user_note": notes
     }).execute()
+    error_message = f"يرجى ادخال  "
     return redirect(url_for('views.tracker'))
 
 
@@ -147,9 +153,10 @@ def settings():
     user_supabase = get_user_supabase()
     if not user_supabase:
         return redirect(url_for("auth.register"))
-    user_data = supabase.auth.get_user()
+    user_data = supabase.auth.get_user(session["access_token"])
+    created_at = user_data.user.created_at.strftime("%Y-%m-%d")
 
-    return render_template("settings.html", user_data=user_data)
+    return render_template("settings.html", user_data=user_data, created_at=created_at)
 
 
 @views.route("/delete_user", methods=["POST"])

@@ -284,11 +284,14 @@ header {
     border-radius: 40px;
 }
 
+
+/*<!-- ========================= features-section start ========================= -->*/
+
 .section-wrapper {
     display: flex;
     flex-direction: column;
-    height: 90vh;
     padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 .section-eyebrow {
@@ -819,6 +822,36 @@ header {
     color: #9ca3af;
     font-size: 14px;
 }
+
+/*contact-us*/
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 69%;
+    background-color: #111827;
+    color: white;
+}
+
+.container-contact {
+    background: #1E2130;
+    border-radius: 16px;
+    border: 0.5px solid rgba(0, 173, 181, 0.15);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 
 @media (max-width: 874px) {
     .nav-links {
